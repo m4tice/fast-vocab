@@ -25,7 +25,7 @@ struct ContentView: View {
                 ScoreView(store: store)
             }
         }
-        .tint(.blue)
+        .tint(AppColor.frontBeachBlue)
         .alert(item: Binding(
             get: { store.errorPresentation },
             set: { _ in store.send(.dismissError) }
