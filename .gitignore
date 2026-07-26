@@ -2,6 +2,17 @@
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
+## macOS
+.DS_Store
+
+## Xcode build products and local state
+DerivedData/
+build/
+*.xcuserstate
+*.xccheckout
+*.moved-aside
+*.xcscmblueprint
+
 ## User settings
 xcuserdata/
 
@@ -30,6 +41,30 @@ playground.xcworkspace
 # .swiftpm
 
 .build/
+
+## Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+pytestdebug.log
+
+## Local Python environments
+.venv/
+venv/
+env/
+ENV/
+
+## Local environment and secrets
+.env
+.env.*
+!.env.example
 
 # CocoaPods
 #
@@ -60,3 +95,8 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+
+## Python tooling and local databases
+*.sqlite
+*.sqlite3
+*.db
