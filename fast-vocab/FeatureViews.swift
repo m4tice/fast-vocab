@@ -287,7 +287,6 @@ struct GameView: View {
                     if let item = viewModel.item, let exercise = viewModel.session?.game.exercise {
                         ExercisePrompt(exercise: exercise, item: item)
                             .frame(maxWidth: .infinity)
-                            .appSurface()
                         answerInput(exercise: exercise, viewModel: viewModel)
                     }
                     Spacer(minLength: 8)
