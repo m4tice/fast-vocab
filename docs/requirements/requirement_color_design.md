@@ -1,6 +1,6 @@
 # requirement_color_design.md
 
-# fastVocab Color and Design Requirements v1.1
+# fastVocab Color and Design Requirements v1.2
 
 ## 1. Purpose
 
@@ -25,16 +25,18 @@ This document is technology agnostic and applies to all implementations of fastV
 fastVocab shall emphasize:
 
 - learning,
+- exploration,
 - progress,
 - consistency,
 - simplicity,
-- positive reinforcement.
+- positive reinforcement,
+- long-term engagement.
 
 The application shall provide a calm and productive learning environment suitable for long study sessions.
 
 The visual identity of fastVocab follows the philosophy:
 
-> Greek Mediterranean × Modern Minimalism × Positive Learning
+> Coastal Mediterranean × Coastal Vietnam × Positive Learning Journey
 
 The application shall feel:
 
@@ -45,9 +47,12 @@ The application shall feel:
 - productive,
 - lightweight,
 - mature,
-- enjoyable.
+- enjoyable,
+- exploratory.
 
 The application shall prioritize learning progress over visual complexity.
+
+The application shall communicate the feeling of exploring beautiful coastal places while learning new languages.
 
 
 ---
@@ -66,7 +71,7 @@ The application should avoid:
 - excessive visual elements,
 - unnecessary distractions.
 
-### Principle 2 - Positive Learning Experience
+### Principle 2 - Positive Learning Journey
 
 The application shall provide constructive and encouraging feedback whenever possible.
 
@@ -75,6 +80,7 @@ The user experience shall emphasize:
 - progress,
 - completion,
 - achievements,
+- exploration,
 - continuous improvement.
 
 Incorrect answers shall be presented as learning opportunities rather than failures.
@@ -99,6 +105,7 @@ Users should be able to recognize:
 - rewards,
 - constructive feedback,
 - navigation,
+- exploration,
 - disabled states,
 
 through consistent visual representations.
@@ -110,12 +117,12 @@ through consistent visual representations.
 
 The application shall follow the principle:
 
-> Three Primary Colors + One Secondary Accent Color + Neutral Colors
+> Three Primary Colors + Two Accent Colors + Neutral Colors
 
 The visual identity of fastVocab shall be defined by:
 
 - three primary colors,
-- one secondary accent color,
+- two accent colors,
 - a neutral color palette.
 
 Neutral colors shall support:
@@ -134,38 +141,38 @@ Additional primary colors shall not be introduced unless explicitly required by 
 ## 5. Primary Color Palette
 
 ```swift
-let greek_palette = [
+let vungtau_palette = [
 
-    "aegean_blue" : "#4F86C6",
-    "olive_green": "#8FA76B",
-    "golden_sand": "#E9C46A"
+    "front_beach_blue" : "#3F8EBF",
+    "con_phung_jade"  : "#2D5955",
+    "golden_sand"     : "#F2C48D"
 
 ]
 ```
 
 | Name | Hex | Purpose |
 |------|-----|---------|
-| Aegean Blue | #4F86C6 | Learning, navigation and primary interactions |
-| Olive Green | #8FA76B | Progress, success and positive feedback |
-| Golden Sand | #E9C46A | Rewards, motivation and achievements |
+| Front Beach Blue | #3F8EBF | Learning, navigation and primary interactions |
+| Con Phung Jade | #2D5955 | Progress, success and positive feedback |
+| Golden Sand | #F2C48D | Rewards, motivation and achievements |
 
-### Aegean Blue
+### Front Beach Blue
 
 Represents:
 
 - learning,
+- exploration,
 - navigation,
-- focus,
-- progression.
+- focus.
 
-### Olive Green
+### Con Phung Jade
 
 Represents:
 
+- progress,
 - success,
 - improvement,
-- lesson completion,
-- encouragement.
+- lesson completion.
 
 ### Golden Sand
 
@@ -181,33 +188,43 @@ Golden Sand should be used sparingly to preserve its visual significance.
 
 ---
 
-## 6. Secondary Accent Color Palette
+## 6. Accent Color Palette
 
 ```swift
 let accent_palette = [
 
-    "terracotta" : "#D98C5F"
+    "coastal_sunset" : "#D98C5F",
+    "marine_moss"    : "#235048"
 
 ]
 ```
 
 | Name | Hex | Purpose |
 |------|-----|---------|
-| Terracotta | #D98C5F | Constructive feedback, mistake review and warnings |
+| Coastal Sunset | #D98C5F | Constructive feedback and reflection |
+| Marine Moss | #235048 | Nature and exploration accents |
 
-### Terracotta
+### Coastal Sunset
 
 Represents:
 
-- continuous improvement,
 - constructive feedback,
+- continuous improvement,
 - learning opportunities,
-- reflection,
 - supportive guidance.
 
-Terracotta shall be utilized when communicating that users have additional opportunities to improve their learning outcomes.
+Coastal Sunset shall not represent punishment or failure.
 
-Terracotta shall not represent failure or punishment.
+### Marine Moss
+
+Represents:
+
+- exploration,
+- discovery,
+- calmness,
+- coastal nature.
+
+Marine Moss should be utilized sparingly to preserve its semantic meaning.
 
 
 ---
@@ -217,7 +234,7 @@ Terracotta shall not represent failure or punishment.
 ```swift
 let neutral_palette = [
 
-    "background"      : "#F1F3F4",
+    "background"      : "#F2E4D8",
     "card"            : "#FFFFFF",
 
     "text_primary"   : "#2F3E46",
@@ -231,8 +248,8 @@ let neutral_palette = [
 
 | Name | Hex | Purpose |
 |------|-----|---------|
-| Background | #F1F3F4 | Main application background |
-| Card | #FFFFFF | Cards and containers |
+| Nghinh Phong Chalk | #F2E4D8 | Main application background |
+| Pure White | #FFFFFF | Cards and containers |
 | Primary Text | #2F3E46 | Main text |
 | Secondary Text | #8EA6B1 | Secondary information |
 | Border | #D6DDE2 | Borders and separators |
@@ -259,6 +276,13 @@ The application should avoid:
 - visually overwhelming interfaces.
 
 The interface should remain comfortable during extended learning sessions.
+
+The visual language should evoke:
+
+- coastal landscapes,
+- relaxation,
+- exploration,
+- positive learning experiences.
 
 
 ---
@@ -292,14 +316,14 @@ Visual feedback shall remain subtle and consistent throughout the application.
 
 Primary actions should utilize:
 
-- Aegean Blue,
-- Olive Green when indicating successful progression.
+- Front Beach Blue,
+- Con Phung Jade when indicating successful progression.
 
 ### Progress Indicators
 
 Progress indicators should utilize:
 
-- Olive Green.
+- Con Phung Jade.
 
 ### Rewards and Achievements
 
@@ -311,7 +335,7 @@ Rewards should utilize:
 
 Constructive feedback should utilize:
 
-- Terracotta.
+- Coastal Sunset.
 
 Examples include:
 
@@ -321,12 +345,24 @@ Examples include:
 - supportive instructional messages,
 - game over presentations.
 
+### Exploration Accents
+
+Exploration accents should utilize:
+
+- Marine Moss.
+
+Examples include:
+
+- decorative illustrations,
+- discovery related UI components,
+- future travel inspired themes.
+
 ### Background Components
 
 Background elements should primarily utilize:
 
-- Background,
-- Card,
+- Nghinh Phong Chalk,
+- Pure White,
 - Neutral colors.
 
 ### Disabled Components
@@ -351,10 +387,10 @@ Each view should utilize one dominant semantic color representing its primary pu
 
 Examples include:
 
-- Aegean Blue for learning and navigation,
-- Olive Green for progress and success,
-- Golden Sand for rewards and achievements,
-- Terracotta for constructive feedback and reflection.
+- Front Beach Blue for learning,
+- Con Phung Jade for progress,
+- Golden Sand for rewards,
+- Coastal Sunset for constructive feedback.
 
 ### Guideline 2 - Neutral First Design
 
@@ -375,35 +411,27 @@ Accent colors should communicate meaningful information only.
 
 Colors shall not be introduced solely for decorative purposes.
 
-Accent colors should emphasize:
-
-- progress,
-- achievements,
-- rewards,
-- constructive feedback,
-- important interactions.
-
 ### Guideline 4 - Multiple Colors Are Permitted When Semantically Appropriate
 
-A view may utilize multiple primary colors when each color communicates a distinct semantic meaning.
+A view may utilize multiple semantic colors when each communicates distinct meanings.
 
 Examples include:
 
 #### Home Page
 
-- Aegean Blue for learning and navigation,
-- Golden Sand for achievements and streaks.
+- Front Beach Blue for learning,
+- Golden Sand for achievements.
 
 #### Game Page
 
-- Olive Green for lesson progression,
-- Terracotta for constructive feedback,
-- Neutral colors for all supporting components.
+- Con Phung Jade for lesson progression,
+- Coastal Sunset for constructive feedback,
+- Neutral colors for supporting components.
 
 #### Score Page
 
-- Golden Sand for rewards and achievements,
-- Olive Green for successful lesson completion,
+- Golden Sand for rewards,
+- Con Phung Jade for successful lesson completion,
 - Neutral colors for supporting information.
 
 ### Guideline 5 - Recommended Color Distribution
@@ -437,14 +465,13 @@ The application shall prioritize usability and semantic consistency over numeric
 
 Future features shall preserve:
 
-- the three-primary-color philosophy,
-- the secondary accent color philosophy,
-- positive learning experiences,
+- the color philosophy,
+- the positive learning journey philosophy,
 - visual consistency,
 - minimal cognitive load,
 - cross-platform consistency.
 
-Future themes and dark mode implementations shall preserve the semantic meaning of all primary and accent colors.
+Future themes and dark mode implementations shall preserve the semantic meaning of all colors.
 
 
 ---
@@ -454,7 +481,7 @@ Future themes and dark mode implementations shall preserve the semantic meaning 
 The color and design requirements shall be considered satisfied when:
 
 - only the defined primary palette is utilized for primary visual interactions,
-- Terracotta is consistently utilized for constructive feedback scenarios,
+- Coastal Sunset is consistently utilized for constructive feedback,
 - neutral colors are consistently applied,
 - visual feedback remains calm and encouraging,
 - learning progress is clearly communicated,
@@ -471,39 +498,41 @@ The color and design requirements shall be considered satisfied when:
 ```text
                         fastVocab
 
-                  Greek Mediterranean
-                             +
-                     Modern Minimalism
-                             +
-                      Positive Learning
-                             |
-                         Learning
-                             |
-                      Aegean Blue
-                             |
+                 Coastal Mediterranean
+                              +
+                    Coastal Vietnam
+                              +
+                 Positive Learning Journey
+                              |
+                           Learn
+                              |
+                     Front Beach Blue
+                              |
                           Progress
-                             |
-                       Olive Green
-                             |
-                   Rewards & Motivation
-                             |
-                      Golden Sand
-                             |
-                 Reflection & Improvement
-                             |
-                        Terracotta
-                             |
-                       Neutral Colors
-                             |
+                              |
+                      Con Phung Jade
+                              |
+                    Rewards & Motivation
+                              |
+                        Golden Sand
+                              |
+                    Reflection & Improvement
+                              |
+                       Coastal Sunset
+                              |
+                    Exploration & Discovery
+                              |
+                         Marine Moss
+                              |
+                        Neutral Colors
+                              |
                   Background • Text • UI
-                             |
-                   Calm Learning Experience
+                              |
+                     Calm Learning Journey
 ```
 
 > ### Design Philosophy
 >
-> **Greek Mediterranean × Modern Minimalism × Positive Learning**
+> **Coastal Mediterranean × Coastal Vietnam × Positive Learning Journey**
 >
-> fastVocab shall provide a calm, consistent and encouraging learning experience that emphasizes progress, simplicity and long-term engagement.
-
-```
+> fastVocab shall provide a calm, modern and encouraging learning experience that emphasizes exploration, progress, simplicity and long-term engagement while evoking the feeling of traveling through beautiful coastal places.
