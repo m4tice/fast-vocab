@@ -6,56 +6,52 @@
 //
 
 import SwiftUI
-import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    @Bindable var store: AppStore
 
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    }
-                }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-        } detail: {
-            Text("Select an item")
-        }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
+        Group {
+            switch store.appState {
+            case .splash:
+                SplashView(store: store)
+            case .home:
+                HomeView(store: store)
+            case .topicSelection:
+                TopicSelectionView(store: store)
+            case .game:
+                GameView(store: store)
+            case .score:
+                ScoreView(store: store)
             }
         }
+        .tint(.blue)
+        .alert(item: Binding(
+            get: { store.errorPresentation },
+            set: { _ in store.send(.dismissError) }
+        )) { error in
+            if let recovery = error.recovery {
+                Alert(
+                    title: Text(store.appState == .splash ? "Unable to Start" : "Unable to Save"),
+                    message: Text(error.message),
+                    primaryButton: .default(Text("Retry")) {
+                        switch recovery {
+                        case .retryInitialization: store.send(.retryInitialization)
+                        case .retryTerminalCommit: store.send(.retryTerminalCommit)
+                        }
+                    },
+                    secondaryButton: .cancel { store.send(.dismissError) }
+                )
+            } else {
+                Alert(title: Text("Something Went Wrong"), message: Text(error.message))
+            }
+        }
+        .task {
+            guard store.vocabularyState == .idle else { return }
+            store.send(.appLaunched)
+        }
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.didEnterBackgroundNotification)) { _ in
+            store.send(.appMovedToBackground)
+        }
     }
-}
-
-#Preview {
-    ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
 }

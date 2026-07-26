@@ -23,12 +23,26 @@ final class fast_vocabUITests: XCTestCase {
     }
 
     @MainActor
-    func testExample() throws {
-        // UI tests must launch the application that they test.
+    func testPrimaryLessonFlow() throws {
         let app = XCUIApplication()
+        app.launchArguments = ["--ui-testing"]
         app.launch()
 
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssertTrue(app.buttons["home.start"].waitForExistence(timeout: 5))
+        app.buttons["home.start"].tap()
+        XCTAssertTrue(app.buttons["topic.household-a1"].waitForExistence(timeout: 2))
+        app.buttons["topic.household-a1"].tap()
+
+        answerArticle("der", in: app)
+        answerText("Stühle", in: app)
+        answerText("lamp", in: app)
+        answerArticle("das", in: app)
+        answerText("Türen", in: app)
+        answerText("window", in: app)
+
+        XCTAssertTrue(app.buttons["score.home"].waitForExistence(timeout: 3))
+        app.buttons["score.home"].tap()
+        XCTAssertTrue(app.buttons["home.start"].waitForExistence(timeout: 2))
     }
 
     @MainActor
@@ -39,5 +53,27 @@ final class fast_vocabUITests: XCTestCase {
                 XCUIApplication().launch()
             }
         }
+    }
+
+    private func answerArticle(_ article: String, in app: XCUIApplication) {
+        let button = app.buttons["game.answer.\(article)"]
+        XCTAssertTrue(button.waitForExistence(timeout: 2))
+        button.tap()
+        continueLesson(in: app)
+    }
+
+    private func answerText(_ answer: String, in app: XCUIApplication) {
+        let field = app.textFields["game.answer.text"]
+        XCTAssertTrue(field.waitForExistence(timeout: 2))
+        field.tap()
+        field.typeText(answer)
+        app.buttons["game.check"].tap()
+        continueLesson(in: app)
+    }
+
+    private func continueLesson(in app: XCUIApplication) {
+        let button = app.buttons["game.continue"]
+        XCTAssertTrue(button.waitForExistence(timeout: 2))
+        button.tap()
     }
 }

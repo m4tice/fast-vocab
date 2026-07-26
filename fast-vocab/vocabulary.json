@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "topics": [
+    {
+      "id": "household-a1",
+      "name": "Household",
+      "sourceLanguageCode": "de",
+      "targetLanguageCode": "en",
+      "items": [
+        { "id": "table", "word": "Tisch", "article": "der", "plural": "Tische", "translations": ["table"] },
+        { "id": "chair", "word": "Stuhl", "article": "der", "plural": "Stühle", "translations": ["chair"] },
+        { "id": "lamp", "word": "Lampe", "article": "die", "plural": "Lampen", "translations": ["lamp"] },
+        { "id": "book", "word": "Buch", "article": "das", "plural": "Bücher", "translations": ["book"] },
+        { "id": "door", "word": "Tür", "article": "die", "plural": "Türen", "translations": ["door"] },
+        { "id": "window", "word": "Fenster", "article": "das", "plural": "Fenster", "translations": ["window"] }
+      ]
+    },
+    {
+      "id": "food-a1",
+      "name": "Food",
+      "sourceLanguageCode": "de",
+      "targetLanguageCode": "en",
+      "items": [
+        { "id": "apple", "word": "Apfel", "article": "der", "plural": "Äpfel", "translations": ["apple"] },
+        { "id": "banana", "word": "Banane", "article": "die", "plural": "Bananen", "translations": ["banana"] },
+        { "id": "bread", "word": "Brot", "article": "das", "plural": "Brote", "translations": ["bread"] },
+        { "id": "cheese", "word": "Käse", "article": "der", "plural": "Käse", "translations": ["cheese"] },
+        { "id": "soup", "word": "Suppe", "article": "die", "plural": "Suppen", "translations": ["soup"] },
+        { "id": "egg", "word": "Ei", "article": "das", "plural": "Eier", "translations": ["egg"] }
+      ]
+    }
+  ]
+}
